@@ -1,0 +1,97 @@
+body {
+    font-family: 'Georgia', serif;
+    font-size: 15px;
+    color: #3e4349;
+    line-height: 1.6em;
+    background: #e9e9e1;
+}
+h1,
+h2 {
+    font-weight: normal;
+}
+a {
+    color: #004b6b;
+}
+@media screen and (min-width: 971px) {
+    header,
+    body > section,
+    footer p{
+        width: 955px;
+        margin: 0 auto;
+    }
+}
+@media screen and (max-width: 970px) {
+    header,
+    body > section,
+        footer{
+        padding: 0 1em;
+        width: auto;
+    }
+}
+header h1 {
+    margin: 0 0 1em 0;
+    padding-top: 0.5em;
+    text-shadow: #ccc 0px 1px;
+}
+header > h1 > a {
+    text-decoration: none;
+    color: inherit;
+}
+header > h1 > a:after {
+    content: ".me";
+    font-size: 0.8em;
+    font-style: italic;
+}
+body > section > h1,
+article > h1 {
+    font-size: 1.3em;
+    padding: 0 0 0.3em 0;
+    border-bottom: 1px #ddd solid;
+}
+body > nav {
+    position: fixed;
+    bottom: 2em;
+    right: 2em;
+    opacity: 0.8;
+}
+body > nav > a {
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5em;
+    border-radius: 0.5em;
+}
+.date,
+.tags {
+    display: inline;
+}
+.tags {
+    padding : 0;
+}
+.tags > li {
+    display: inline;
+}
+.tags > li:before {
+    content: "#";
+}
+code, pre {
+    display: block;
+    overflow-x: auto;
+    background: #000;
+    color: #f8f8f8;
+    font-family: 'Consolas', 'Menlo', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+    font-size: 0.95em;
+    line-height: 1.5em;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    max-width: 100%;
+    padding: 0.5em 1em;
+}
+footer {
+    padding-bottom: 1em;
+}
+@media screen and (max-width: 1000px) {
+    footer img {
+        opacity: 0.4;
+    }
+}

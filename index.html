@@ -1,0 +1,30 @@
+---
+layout: base
+lang: fr
+title: jeanphix, développeur web à Clermont-Ferrand
+description: developpeur web à Clermont-Ferrand, spécialiste du framework django.
+---
+
+<p>Développeur web depuis une petite dizaine d'années, je développe pour toi des applications (frontend & backend) de qualité: ergonomiques, performantes et respectueuses des standards.</p>
+<h1>Publications</h1>
+<ul>
+    {% for post in site.posts %}
+        <li>
+            {{ post.date | date_to_string }} <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li>
+    {% endfor %}
+</ul>
+<h1>Ailleurs</h1>
+<ul>
+    <li><a href="http://twitter.com/jeanphix" title="jeanphix sur twitter">twitter</a></li>
+    <li><a href="http://github.com/jeanphix" title="jeanphix sur github">github</a></li>
+    <li><a href="http://bitbucket.org/jeanphix" title="jeanphix sur bitbucket">bitbucket</a></li>
+    <li><a href="https://plus.google.com/u/0/115074686390268669576/posts" title="jeanphix sur google plus">plus?</a></li>
+</ul>
+<h1>Amis</h1>
+<ul>
+    <li><a href="http://www.carpe-hora.com/blog-technique/" title="développement web Clermont-Ferrand">Julien Muetton</a></li>
+    <li><a href="http://www.akei.com/fr" title="Ingénierie Web, Formation, Développement, Conseil à Montpellier">Nicolas Perriault</a></li>
+    <li><a href="http://www.akei.com/fr" title="Vincent Mazenod">Vincent Mazenod</a></li>
+    <li><a href="http://williamdurand.fr/" title="William Durand">William Durand</a></li>
+</ul>

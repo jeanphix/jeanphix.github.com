@@ -1,0 +1,8 @@
+safe: true
+permalink: pretty
+pygments: true
+
+sitename: jeanphix
+url: http://jeanphix.me
+author: jean-philippe serafin
+author_email: serafinjp@gmail.com

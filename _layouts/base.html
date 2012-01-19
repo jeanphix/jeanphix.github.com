@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang }}">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="alternate" type="application/atom+xml" title="Post feeds" href="/atom.xml" />
+        <meta name="description" content="{{ page.description }}" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <link rel="stylesheet" href="/static/css/normalize.css/normalize.css" type="text/css" />
+        <link rel="stylesheet" href="/static/css/pygments.css" type="text/css" />
+        <link rel="stylesheet" href="/static/css/style.css" type="text/css" />
+        <link rel="shortcut icon" href="/static/images/favicon.ico" />
+        <title>{{ page.title }}</title>
+        <!--[if lt IE 9]>
+            <script src="/static/js/html5-ie.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <header>
+            <h1 id="title"><a href="/" title="homepage">jeanphix</a></h1>
+        </header>
+        <nav><a href="#title">top</a></nav>
+        <section>
+            {{ content }}
+        </section>
+        <footer>
+            <p>2012 - <a href="mailto:serafinjp@gmail.com">jean-philippe serafin</a> - <a href="/atom.xml">feeds</a> - powered by <a href="http://jekyllrb.com/">jekyll</a> & <a href="http://github.com" title="github - social coding">github</a></p>
+            <a href="http://github.com/jeanphix/jeanphix.github.com"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/7afbc8b248c68eb468279e8c17986ad46549fb71/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub"></a>
+        </footer>
+        {{ scripts }}
+    </body>
+</html>
