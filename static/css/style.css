@@ -91,6 +91,9 @@ code, pre {
     max-width: 100%;
     padding: 0.5em 1em;
 }
+#disqus_thread {
+    margin-top: 2em;
+}
 footer {
     padding-bottom: 1em;
 }
