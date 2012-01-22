@@ -1,7 +1,7 @@
 ---
 layout: post
 lang: en
-title: Django real world functional tests
+title: Django real world functional testing
 tags:
 - django
 - selenium
