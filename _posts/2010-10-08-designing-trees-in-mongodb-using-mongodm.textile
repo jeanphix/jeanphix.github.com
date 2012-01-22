@@ -2,7 +2,6 @@
 layout: post
 lang: fr
 title: Designing trees in mongodb using mongodm
-toto: titi
 tags:
 - mongodb
 - mongodm
