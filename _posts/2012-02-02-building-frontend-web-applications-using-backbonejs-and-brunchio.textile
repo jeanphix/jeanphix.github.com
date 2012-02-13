@@ -13,7 +13,7 @@ Last sunday I decided to grow up my javascript skills by playing with modern and
 I planned to test:
 
 * a language abstraction ("coffeescript":http://coffeescript.org/)
-* a frontend MVC framework that deals with RESTfull APIs ("spine.js":http://spinejs.com/, "backbone.js":http://documentcloud.github.com/backbone/)
+* a frontend MVC framework that deals with RESTful APIs ("spine.js":http://spinejs.com/, "backbone.js":http://documentcloud.github.com/backbone/)
 * a template engine (eco, "coffeekup":http://coffeekup.org/)
 
 First of all, I tried spine.js that is a frontend framework that provides:
@@ -27,7 +27,7 @@ First of all, I tried spine.js that is a frontend framework that provides:
 
 But I trashed it cause of hard jQuery dependency (&lt;troll>I hate jQuery&lt;/troll>).
 
-So, next I discovered "brunch.io":http://brunch.io that is a backbone.js projects bootstrapper that does quite the same things as spine.js with the possibility to replace jQuery by "zetpo.js":http://zeptojs.com/.
+So, next I discovered "brunch.io":http://brunch.io that is a backbone.js projects bootstrapper that does quite the same things as spine.js with the possibility to replace jQuery by "zepto.js":http://zeptojs.com/.
 
 The stack here is composed of:
 
@@ -40,7 +40,7 @@ The stack here is composed of:
 
 h2. Test project
 
-My favorite RESTfull API to test new client is github's one, cause it has been well designed and "CORS":http://developer.github.com/v3/#cross-origin-resource-sharing requests are allowed.
+My favorite RESTful API to test new client is github's one, cause it has been well designed and "CORS":http://developer.github.com/v3/#cross-origin-resource-sharing requests are allowed.
 
 _If you planned to write a client side application on top of that kind of library, make sure the service is consumable via XHR, otherwise you'll have to make a server side "reverse proxy application", and then doing the job client side will make no sence (IMHO)._
 
