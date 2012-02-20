@@ -1,6 +1,0 @@
-[submodule "static/css/normalize.css"]
-	path = static/css/normalize.css
-	url = https://github.com/necolas/normalize.css.git
-[submodule "static/js/respond"]
-	path = static/js/respond
-	url = https://github.com/scottjehl/Respond.git
