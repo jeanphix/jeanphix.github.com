@@ -42,7 +42,7 @@ Les media queries employées deviennent donc du type :
 {% highlight css %}
 @media screen and (max-width: 800px) {
     /*
-        j'annule des flottant, des fixés...
+        j'annule des flottants, des fixés...
     */
 }
 {% endhighlight %}
