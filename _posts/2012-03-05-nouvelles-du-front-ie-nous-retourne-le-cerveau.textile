@@ -9,7 +9,7 @@ tags:
 
 Depuis quelques temps, je fais de plus en plus de front, ce qui ne me déplaît pas. C'est un domaine très riche où doivent cohabiter: standards, navigateurs et utilisateurs.
 
-C'est sans aucun doute la part de mon métier la plus gourmande en veille et apprentissage. Aussi je me permettrai autour de quelques petits billets ici même de vous faire part de mes humeurs et réflexions à ce sujet.
+C'est sans aucun doute la part de mon métier la plus gourmande en veille et apprentissage. Aussi je me permettrai autour de quelques petits billets de vous faire part, ici même, de mes humeurs et réflexions à ce sujet.
 
 Aujourd'hui, je voudrais vous parler des media queries et des pratiques qui semblent imposées par le retard d'implémentation d'Internet Explorer (les media queries n'y sont interprétées que depuis sa version 9).
 
