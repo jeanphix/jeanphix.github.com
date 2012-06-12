@@ -81,6 +81,11 @@ body > nav > a {
 .tags > li:before {
     content: "#";
 }
+.alert {
+    border: #f00 1px solid;
+    color: #f00;
+    padding: 1em;
+}
 code, pre {
     display: block;
     overflow-x: auto;

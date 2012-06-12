@@ -9,6 +9,9 @@ tags:
 - S3
 ---
 
+p(alert). _Outdated_ Heroku now "automatically runs `collectstatic`":https://devcenter.heroku.com/articles/django-assets on deployment.
+    By the way, I encourage you to put all your environment specific configs (like database dsn, debug...) into environment variables.
+
 Today I'll show you my tips backed from a django project deployment over heroku (application) and S3 (statics).
 
 h2. Setting up environments
