@@ -88,17 +88,19 @@ body > nav > a {
 }
 code, pre {
     display: block;
-    overflow-x: auto;
     background: #000;
     color: #f8f8f8;
     font-family: 'Consolas', 'Menlo', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
     font-size: 0.95em;
     line-height: 1.5em;
-    word-wrap: break-word;
-    white-space: pre-wrap;
-    max-width: 100%;
     padding: 0.5em 1em;
+    overflow-wrap: normal;
+    white-space: pre;
 }
+pre {
+    overflow-x: auto;
+}
+
 #disqus_thread {
     margin-top: 2em;
 }
