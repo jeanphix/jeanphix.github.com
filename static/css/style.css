@@ -23,16 +23,16 @@ a {
     header,
     body > section,
     footer p{
-        width: 955px;
         margin: 0 auto;
+        width: 955px;
     }
 }
 @media screen and (max-width: 970px) {
     header,
     body > section,
         footer{
-        padding: 0 1em;
         width: auto;
+        padding: 0 1em;
     }
 }
 header h1 {
@@ -88,14 +88,14 @@ body > nav > a {
 }
 code, pre {
     display: block;
-    background: #000;
+    padding: 0.5em 1em;
+    overflow-wrap: normal;
+    line-height: 1.5em;
+    white-space: pre;
     color: #f8f8f8;
     font-family: 'Consolas', 'Menlo', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
     font-size: 0.95em;
-    line-height: 1.5em;
-    padding: 0.5em 1em;
-    overflow-wrap: normal;
-    white-space: pre;
+    background: #000;
 }
 pre {
     overflow-x: auto;
