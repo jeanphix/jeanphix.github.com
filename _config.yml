@@ -6,3 +6,5 @@ sitename: jeanphix
 url: http://jeanphix.me
 author: jean-philippe serafin
 author_email: serafinjp@gmail.com
+
+markdown: kramdown

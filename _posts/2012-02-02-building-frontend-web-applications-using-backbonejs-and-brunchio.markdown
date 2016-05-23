@@ -12,9 +12,9 @@ Last sunday I decided to grow up my javascript skills by playing with modern and
 
 I planned to test:
 
-* a language abstraction ("coffeescript":http://coffeescript.org/)
-* a frontend MVC framework that deals with RESTful APIs ("spine.js":http://spinejs.com/, "backbone.js":http://documentcloud.github.com/backbone/)
-* a template engine (eco, "coffeekup":http://coffeekup.org/)
+* a language abstraction [coffeescript](http://coffeescript.org/)
+* a frontend MVC framework that deals with RESTful APIs [spine.js](http://spinejs.com/), [backbone.js](http://documentcloud.github.com/backbone/)
+* a template engine (eco, [coffeekup](http://coffeekup.org/))
 
 First of all, I tried spine.js that is a frontend framework that provides:
 
@@ -27,7 +27,7 @@ First of all, I tried spine.js that is a frontend framework that provides:
 
 But I trashed it cause of hard jQuery dependency (&lt;troll>I hate jQuery&lt;/troll>).
 
-So, next I discovered "brunch.io":http://brunch.io that is a backbone.js projects bootstrapper that does quite the same things as spine.js with the possibility to replace jQuery by "zepto.js":http://zeptojs.com/.
+So, next I discovered [brunch.io](http://brunch.io) that is a backbone.js projects bootstrapper that does quite the same things as spine.js with the possibility to replace jQuery by [zepto.js](http://zeptojs.com/).
 
 The stack here is composed of:
 
@@ -38,9 +38,9 @@ The stack here is composed of:
 * css tools (boilerplate...)
 * brunch.io (project configuration and class bootsrapping)
 
-h2. Test project
+## Test project
 
-My favorite RESTful API to test new client is github's one, cause it has been well designed and "CORS":http://developer.github.com/v3/#cross-origin-resource-sharing requests are allowed.
+My favorite RESTful API to test new client is github's one, cause it has been well designed and [CORS](http://developer.github.com/v3/#cross-origin-resource-sharing) requests are allowed.
 
 _If you planned to write a client side application on top of that kind of library, make sure the service is consumable via XHR, otherwise you'll have to make a server side "reverse proxy application", and then doing the job client side will make no sence (IMHO)._
 
@@ -60,9 +60,9 @@ $ brunch watch --server
 
 runs an express.js instance that delivers compiled files (just open http://localhost:3000 in your favorite browser).
 
-h2. Backbone main concepts
+## Backbone main concepts
 
-h3. Routers
+### Routers
 
 Backbone routers is the navigation layer that links UI actions to the views.
 
@@ -78,7 +78,7 @@ class exports.MainRouter extends Backbone.Router
     app.repositoryView.render(username, repository).el
 {% endhighlight %}
 
-h3. Views
+### Views
 
 Views are controller classes that deal with your business models and the UI. Each view as an `el` member that is the DOM element where rendering will be displayed.
 
@@ -119,9 +119,9 @@ class exports.IssueListView extends Backbone.View
     @issues.each @addOne
 {% endhighlight %}
 
-h3. Models
+### Models
 
-A model is a business entity, that is linked to an HTTP ressource using the `url` attribute.
+A model is a business entity, that is linked to an HTTP ressource using the _url_ attribute.
 
 _May be persisted and fetched from local storage to._
 
@@ -140,11 +140,11 @@ class exports.Issue extends Backbone.Model
     body: null
 {% endhighlight %}
 
-h3. Collections
+### Collections
 
 Collection is a set of model objects, as models, they may be linked to an HTTP ressource.
 
-That's all for basics. For now, my application only lists issues for a given project. I'll maybe add more features (like create / update / delete issues) later. You'll find a live demo "here":http://jeanphix.me/brunch-github-issues/#brunch/brunch.
+That's all for basics. For now, my application only lists issues for a given project. I'll maybe add more features (like create / update / delete issues) later. You'll find a live demo [here](http://jeanphix.me/brunch-github-issues/#brunch/brunch).
 
 See you.
 

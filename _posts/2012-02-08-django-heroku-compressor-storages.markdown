@@ -9,18 +9,18 @@ tags:
 - S3
 ---
 
-p(alert). _Outdated_ Heroku now "automatically runs `collectstatic`":https://devcenter.heroku.com/articles/django-assets on deployment.
-    By the way, I encourage you to put all your environment specific configs (like database dsn, debug...) into environment variables.
+<p class="alert"><i>Outdated</i> Heroku now "automatically runs <a href="https://devcenter.heroku.com/articles/django-assets">collectstatic</a> on deployment.
+    By the way, I encourage you to put all your environment specific configs (like database dsn, debug...) into environment variables.</p>
 
 Today I'll show you my tips backed from a django project deployment over heroku (application) and S3 (statics).
 
-h2. Setting up environments
+## Setting up environments
 
 First of all, I need two remote environments (production and staging) with distinct settings. In order to feet my git workflow, I had to create three local branches:
 
-* master: that I push even on heroku `production` application and on a `master` github branch.
-* staging: that I push even on heroku `staging` application and on a `staging` github branch.
-* development: that I push on a `development` github branch.
+* master: that I push even on heroku _production_ application and on a _master_ github branch.
+* staging: that I push even on heroku _staging_ application and on a _staging_ github branch.
+* development: that I push on a _development_ github branch.
 
 Project bootstrap:
 
@@ -61,11 +61,11 @@ $ git checkout -b development
 
 Then the workflow is as easy as:
 
-* commit features' stuff on `development`
-* merge `development` into `staging`
-* push `staging` into remote `staging/master`
-* merge `staging` into `master`
-* push `master` to remote `production/master`
+* commit features' stuff on _development_
+* merge _development_ into _staging_
+* push _staging_ into remote _staging/master_
+* merge _staging_ into _master_
+* push _master_ to remote _production/master_
 
 Now I need a way to setup environment specific settings, here is the pattern I used:
 
@@ -114,18 +114,18 @@ $ heroku config:add APP_ENV=production --remote production
 
 That's it, the application now switches to the appropriate config file for current branch and can be override by setting APP_ENV environment variable.
 
-h2. django-compressor feat. django-storages
+## django-compressor feat. django-storages
 
-The other tip I'll show you here is to configure "django-compressor":https://github.com/jezdez/django_compressor and "django-storages":http://code.larlet.fr/django-storages/ to work together on previous set environments.
+The other tip I'll show you here is to configure [django-compressor](https://github.com/jezdez/django_compressor) and [django-storages](http://code.larlet.fr/django-storages/) to work together on previous set environments.
 
 The expected behaviours I need:
 
-* When settings.DEBUG is True:
-** statics have to be delivered by the application (or heroku nginx on remotes).
-** compressor has to be disabled
-* When settings.DEBUG is FALSE:
-** statics have to be delivered by Amazon S3 CDN.
-** compressor has to be enabled and upload compressed assets to S3
+	* When settings.DEBUG is True:
+	** statics have to be delivered by the application (or heroku nginx on remotes).
+	** compressor has to be disabled
+	* When settings.DEBUG is FALSE:
+	** statics have to be delivered by Amazon S3 CDN.
+	** compressor has to be enabled and upload compressed assets to S3
 
 As compressor use "locally collected" statics, I need to collect it locally on remotes to, lets create a custom storage class, myproject/myapp/storage.py:
 
@@ -200,7 +200,7 @@ Ok, so now, to collect static over S3 I just need to set myproject.config.{branc
 $ python myproject/manage.py collectstatic --noinput
 {% endhighlight %}
 
-_Note_: collecting statics via a `worker` is probably a better practice but it will increase your heroku bills...
+_Note_: collecting statics via a _worker_ is probably a better practice but it will increase your heroku bills...
 
 Hope this will help you.
 

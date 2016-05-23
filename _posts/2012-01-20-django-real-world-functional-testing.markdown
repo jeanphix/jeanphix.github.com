@@ -13,7 +13,7 @@ In the real world, a django application may be deployed on a real production pla
 * proxy
 * ...
 
-When we write functional tests with the "dummy web client":https://docs.djangoproject.com/en/dev/topics/testing/#test-client, we do not cover what's going on over all those layers that composed application globality.
+When we write functional tests with the [dummy web client](https://docs.djangoproject.com/en/dev/topics/testing/#test-client), we do not cover what's going on over all those layers that composed application globality.
 
 Also, in the real world, we use web client intances such as browsers like chromium, opera, IE... to deal with the application over HTTP and we want our application to run correctly on all those clients.
 
@@ -21,13 +21,13 @@ Another important point is the use of client side javascripts: when we use the d
 
 That's why we need to write functionnal tests that cover real world constraints.
 
-"Django 1.4":https://docs.djangoproject.com/en/dev/releases/1.4/ will bring us tools to do the job.
+[Django 1.4](https://docs.djangoproject.com/en/dev/releases/1.4/) will bring us tools to do the job.
 
-h2. Lets write a demo application
+## Lets write a demo application
 
 To simply illustrate this, I've made a simple (useless) application composed of a single user story:
 
-bq. As an anonymous user, I can write a message, then the message is displayed in a list with the nine latest messages.
+    As an anonymous user, I can write a message, then the message is displayed in a list with the nine latest messages.
 
 models.py:
 
@@ -96,13 +96,13 @@ window.addEvent('domready', function() {
         var request = new Request.JSON({
             url: form.action,
 
-            onSuccess: function(datas) {
+            onSuccess: function(data) {
                 form.getElements('.errorlist').each(function(element) {
                     element.destroy();
                 });
-                if (datas.errors) {
+                if (data.errors) {
                     // Form is not valid
-                    Object.each(datas.errors, function(value, key) {
+                    Object.each(data.errors, function(value, key) {
                         var input = document.id('id_' + key);
                         var previous = input.getParent('p').getPrevious();
                         var errorlist = new Element('ul', {
@@ -117,10 +117,10 @@ window.addEvent('domready', function() {
                         postList = new Element('ul', {'class': 'post-list'}).inject(form, 'after');
                     }
                     var li = new Element('li', {
-                        id: datas.id,
+                        id: data.id,
                         html: '0 minutes ago ' +
-                        '<span class="author">' + datas.author + '</span> wrote:' +
-                        '<blockquote>' + datas.message + '</blockquote>'
+                        '<span class="author">' + data.author + '</span> wrote:' +
+                        '<blockquote>' + data.message + '</blockquote>'
                     }).inject(postList, 'top');
                     form.getElement('textarea').set('value', '').focus();
                 }
@@ -154,9 +154,9 @@ class HomeView(CreateView):
     def form_valid(self, form):
         resp = super(HomeView, self).form_valid(form)
         if self.request.is_ajax():
-            datas = {'id': self.object.id, 'message': self.object.message,
+            data = {'id': self.object.id, 'message': self.object.message,
                 'author': self.object.author}
-            return self.get_json_response(datas)
+            return self.get_json_response(data)
         else:
             return resp
 
@@ -167,19 +167,19 @@ class HomeView(CreateView):
         else:
             return super(HomeView, self).form_invalid(form)
 
-    def get_json_response(self, datas):
-        return HttpResponse(json.dumps(datas), content_type='application/json')
+    def get_json_response(self, data):
+        return HttpResponse(json.dumps(data), content_type='application/json')
 {% endhighlight %}
 
 Now my application works correctly even when javascript is disabled. Now it's gonna be cool to write a functionnal test to cover that.
 
-h2. LiveServerTestCase
+## LiveServerTestCase
 
-Django 1.4 introduced a new test class called "LiveServerTestCase":https://docs.djangoproject.com/en/dev/topics/testing/#live-test-server that extends  TransactionTestCase.
+Django 1.4 introduced a new test class called [LiveServerTestCase](https://docs.djangoproject.com/en/dev/topics/testing/#live-test-server) that extends  TransactionTestCase.
 
 This new test class launches the application in a real WSGI server instance into an asynchronous thread. As it's a real server, we can easily write tests within real web browser instances.
 
-There are many solutions providing python backends ("Ghost.py":http://jeanphix.me/Ghost.py/, "Selenium":http://readthedocs.org/docs/selenium-python/en/latest/...), here I'm gonna use Selenium.
+There are many solutions providing python backends ([Ghost.py](https://github.com/jeanphix/Ghost.py), [Selenium](http://readthedocs.org/docs/selenium-python/en/latest/)...), here I'm gonna use Selenium.
 
 So, I had a new (minimalist) test case:
 

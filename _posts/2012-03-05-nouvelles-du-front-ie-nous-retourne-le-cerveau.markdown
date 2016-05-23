@@ -13,7 +13,7 @@ C'est sans aucun doute la part de mon métier la plus gourmande en veille et app
 
 Aujourd'hui, je voudrais vous parler des media queries et des pratiques qui semblent imposées par le retard d'implémentation d'Internet Explorer (les media queries n'y sont interprétées que depuis sa version 9).
 
-h2. Intégrer naturellement
+## Intégrer naturellement
 
 En général quand je commence une feuille de style, elle débute par la mise en place de la typographie: police de caractères, rythme (line-height, margin des hX, ul, p...) ce qui amène généralement un style suffisant et utilisable sur les plus petits devices.
 
@@ -33,7 +33,7 @@ En gros : je vais du plus petit au plus grand en incrémentant la feuille de sty
 
 C'est de loin la façon de faire qui me semble la plus naturelle.
 
-h2. Intégrer en ciblant Internet Explorer
+## Intégrer en ciblant Internet Explorer
 
 J'ai pu constater en décortiquant certaines intégrations, certaines librairies de style que nombre d'entre nous procèdent à l'inverse: En montant d'abord les styles pour un viewport de dimensions desktop (pour un affichage correct par IE8-) et ensuite en les dégradant pour des viewports plus petits.
 
@@ -49,10 +49,10 @@ Les media queries employées deviennent donc du type :
 
 Cela s'appelle tout simplement : "raisonner à l'envers", et tout ceci, car monsieur Internet Explorer l'impose.
 
-h2. La solution
+## La solution
 
 Elle est pour moi des plus simples : ne pas supporter IE8-.
 
-Sinon, si vraiment vous n'avez pas le choix, il existe une petite librairie javascript sympa et légère qui permet de rendre les media queries supportables par les navigateurs obsolètes: "Respond.js(A fast & lightweight polyfill for min/max-width CSS3 Media Queries)":https://github.com/scottjehl/Respond.
+Sinon, si vraiment vous n'avez pas le choix, il existe une petite librairie javascript sympa et légère qui permet de rendre les media queries supportables par les navigateurs obsolètes: [Respond.js](https://github.com/scottjehl/Respond).
 
-ps: une autre petite librairie à mettre dans votre boîte à outils: "selectivizr(CSS3 selectors for IE)":http://selectivizr.com/.
+ps: une autre petite librairie à mettre dans votre boîte à outils: [selectivizr](http://selectivizr.com/).

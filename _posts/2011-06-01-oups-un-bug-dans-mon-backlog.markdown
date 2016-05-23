@@ -9,11 +9,11 @@ tags:
 ---
 
 
-Au cours de son excellente conférence "l'anatomie d'une mission agile(vidéo de la conférence anatomie d'une mission agile)":http://www.areyouagile.com/2011/11/anatomie-dune-mission-agile/ durant laquelle il nous a exposé ses retours d'expériences sur le déploiement de l'agilité au sein d'une société d'édition logiciel, "Pablo Pernot(areyouagile)":http://www.areyouagile.com/ a évoqué son échec sur la mise en place d'un KanBan pour la gestion des défauts.
+Au cours de son excellente conférence [l'anatomie d'une mission agile](http://www.areyouagile.com/2011/11/anatomie-dune-mission-agile/) durant laquelle il nous a exposé ses retours d'expériences sur le déploiement de l'agilité au sein d'une société d'édition logiciel, [Pablo Pernot](http://www.areyouagile.com/) a évoqué son échec sur la mise en place d'un KanBan pour la gestion des défauts.
 
 Il est en effet fréquent de constater la mise en place d'un workflow de traitements des bugs dissocié de la gestion centrale du projet. Dans son cas, la gestion du projet était outillée par SCRUM qui est axé autour d'un backlog de produit.
 
-h2. Rappelons rapidement ce qu'est un backlog de produit:
+## Rappelons rapidement ce qu'est un backlog de produit:
 
 Un backlog est tout simplement une liste récursive (arborescence) des éléments qui devront composer le produit: fonctionnalités, tests, cas d'utilisations, tâches... plus généralement, c'est une vision à l'instant t de ce que sera le produit dans son état final (et englobe donc ce qu'est le produit dans son état actuel, le cas échéant, il faut se poser des questions...).
 
@@ -27,7 +27,7 @@ Exemple de ce que pourrait être le workflow de traitement d'un élément du bac
 * test
 * dépôt dans la release suivante
 
-h2. Qu'est-ce qu'un bug?
+## Qu'est-ce qu'un bug?
 
 Un bug est un défaut (visuel, fonctionnel, sécuritaire...) livré sur une release du produit. Généralement il est livré involontairement par l'équipe de production et remonté par les utilisateurs.
 
@@ -57,10 +57,11 @@ Il est donc tout à fait cohérent de fusioner la gestion des développements de
 
 Un petit exemple de ce que pourrait être un backlog incluant un bug:
 
-* #feature accounts
-** #feature registration
-*** #story as an anonymous user I can register new account
-**** #task create registration form
-***** #defect doesn't prevent CSRF
-** #feature authentication
-...
+
+    * #feature accounts
+    ** #feature registration
+    *** #story as an anonymous user I can register new account
+    **** #task create registration form
+    ***** #defect doesn't prevent CSRF
+    ** #feature authentication
+    ...

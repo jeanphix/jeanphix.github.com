@@ -1,7 +1,7 @@
 ---
 layout: post
 lang: en
-title: Reordering datas extracted using postgres WITH RECURSIVE
+title: Reordering data extracted using postgres WITH RECURSIVE
 tags:
 - postgresql
 ---

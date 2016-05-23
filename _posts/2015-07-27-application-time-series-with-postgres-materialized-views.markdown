@@ -88,7 +88,7 @@ That results in something like:
 
 But the query took *1068.265* ms to execute, which is really too slow for a web app...
 
-h2. Store a time serie within a materialized view:
+## Store a time serie within a materialized view:
 
 As in our dashboard we also want to allow the user to zoom in a specific month and a specific day, we will then consider that the unit serie will be: total amount / merchant / day.
 
@@ -231,7 +231,7 @@ That returns:
 
 within *0.113 ms*.
 
-h2. Refresh strategy
+## Refresh strategy
 
 Unfortunately, postgresql still doesn't provide a way to partially refresh a view, but 9.4 introduced a *concurrently* parameter that allows to run a non blocking *refesh*:
 
@@ -239,7 +239,7 @@ Unfortunately, postgresql still doesn't provide a way to partially refresh a vie
 refresh materialized view concurrently daily_merchant_transaction_amount;
 {% endhighlight %}
 
-h2. Scale up considerations
+## Scale up considerations
 
 * put the views in physical volumes separated from the application tables.
 * query the views from dedicated slave nodes.

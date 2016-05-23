@@ -1,23 +1,23 @@
 ---
 layout: post
-lang: fr
+lang: en
 title: Designing trees in mongodb using mongodm
 tags:
 - mongodb
 - mongodm
 ---
 
-h2. why mongodm?
+## why mongodm?
 
-"mongodm(mongodm)":http://github.com/jeanphix/mongodm is a small API on top of pymongo that allowed to create user defined mongodb object documents.
+[mongodm](https://github.com/jeanphix/mongodm) is a small API on top of pymongo that allowed to create user defined mongodb object documents.
 
 All collection's queries are still made using pymongo, mongodm just provide an nice way to create data structures and validation schemas.
 
-The first reason that bring me away from the great "mongoengine(mongoengine)":http://mongoengine.org/ is that's there's no way to easily manage recursive trees.
+The first reason that bring me away from the great [mongoengine](http://mongoengine.org/) is that's there's no way to easily manage recursive trees.
 
-Here are two "tree pattern(trees in mongodb)":http://www.mongodb.org/display/DOCS/Trees+in+MongoDB implementation using this small library.
+Here are two [tree pattern](http://www.mongodb.org/display/DOCS/Trees+in+MongoDB) implementation using this small library.
 
-h2. Full Tree in Single Document
+## Full Tree in Single Document
 
 code sample:
 
@@ -65,7 +65,7 @@ first_child.children.append(third_child)
 Tree.collection().insert(tree)
 {% endhighlight %}
 
-mongodb datas:
+mongodb data:
 
 {% highlight javascript %}
 > db.trees.find()
@@ -86,7 +86,7 @@ mongodb datas:
 ], "label" : "root" }
 {% endhighlight %}
 
-h2. Materialized paths pattern
+## Materialized paths pattern
 
 code sample:
 
@@ -133,7 +133,7 @@ third_child.parent = first_child
 TreeNode.collection().insert(third_child)
 {% endhighlight %}
 
-mongodb datas:
+mongodb data:
 
 {% highlight javascript %}
 > db.nodes.find()

@@ -9,7 +9,7 @@ tags:
 
 Testing frontend javascript map behaviours and geolocation stuff is not an easy thing to do.
 
-"Casper.js(Casper.js)":http://n1k0.github.com/casperjs/, that come on top of Phantom.js, is a great tool for quickly write functionnal tests, including frontend javascript behaviours cover as it provides an API to access real DOM state.
+[Casper.js](https://n1k0.github.com/casperjs/), that come on top of Phantom.js, is a great tool for quickly write functionnal tests, including frontend javascript behaviours cover as it provides an API to access real DOM state.
 
 As QtWebKit doesn't deal with javascript geolocation API, we need to write a fake location service in order to test user position changes.
 
