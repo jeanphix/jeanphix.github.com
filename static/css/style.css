@@ -10,7 +10,17 @@ h2,
 h3 {
     font-weight: normal;
 }
+article > h1:not(:first-child):before {
+    display: block;
+    margin: 1em 0;
+    content: "~";
+    text-align: center;
+    font-size: 300%;
+}
 h2 {
+    margin-top: 2em;
+    padding-left: 0.5em;
+    border-left: 1em #ccc solid;
     font-size: 1.2em;
 }
 h3 {
