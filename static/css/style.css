@@ -113,6 +113,9 @@ code, pre {
 pre {
     overflow-x: auto;
 }
+img {
+    max-width: 100%;
+}
 
 #disqus_thread {
     margin-top: 2em;
