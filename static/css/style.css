@@ -1,9 +1,16 @@
+@font-face {
+    font-family: "Open Sans";
+    font-weight: normal;
+    font-style: normal;
+    src:url("OpenSans-Regular.ttf");
+}
+
+
 body {
-    font-family: 'Georgia', serif;
-    font-size: 16px;
+    font-family: 'Open Sans', serif;
+    font-size: 18px;
     color: #3e4349;
     line-height: 1.6em;
-    background: #f1f1ea;
 }
 h1,
 h2,
@@ -20,7 +27,7 @@ article > h1:not(:first-child):before {
 h2 {
     margin-top: 2em;
     padding-left: 0.5em;
-    border-left: 1em #ccc solid;
+    border-left: 1em #e6e6e6 solid;
     font-size: 1.2em;
 }
 h3 {
@@ -41,6 +48,9 @@ em {
     }
 }
 @media screen and (max-width: 970px) {
+    body {
+        font-size: 16px;
+    }
     header,
     body > section,
         footer{
@@ -100,9 +110,8 @@ code, pre {
     overflow-wrap: normal;
     line-height: 1.5em;
     white-space: pre;
-    color: #f8f8f8;
+    color: #fff;
     font-family: 'Consolas', 'Menlo', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
-    font-size: 0.95em;
     background: #000;
 }
 pre {
